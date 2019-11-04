@@ -10,10 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Route::get('/',function(){
+    return view('welcome');
+})->name('welcome');
 Route::get("/get-user-form", "UserController@getAddUserForm")->name('user.add');
 Route::post('/insert', ['as' => 'insert', 'uses' => 'UserController@insertAction']);
-Route::get("/showAll", "UserController@showAllAction");
+Route::get("/showAll", "UserController@showAllAction")->name('user.all');
 Route::get("/showAction/{id}", "UserController@showAction")->name('user.edit');
 Route::post("/update/{id}", "UserController@updateAction")->name('user.update');
 Route::get("/delete/{id}", "UserController@deleteAction")->name('user.delete');
