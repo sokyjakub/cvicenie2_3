@@ -27,7 +27,7 @@ class UserController extends Controller
         $user -> age = $age;
         $user -> save();
 
-        return response()->view('adduser');
+        return redirect()->action("UserController@showAllAction");
     }
 
     public function showAllAction(){
@@ -53,4 +53,9 @@ class UserController extends Controller
         return redirect()->action("UserController@showAllAction");
     }
 
+    public function deleteAction($id){
+        $user = User::where('id',$id)->first();
+        $user->delete();
+        return redirect()->action("UserController@showAllAction");
+    }
 }

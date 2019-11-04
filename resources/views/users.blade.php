@@ -13,8 +13,14 @@
                 {{$user->age}}
             </td>
             <td>
-                <a href="{{route('edit.user',$user->id)}}">editovať</a>
+                <a href="{{route('user.edit',$user->id)}}">editovať</a>
+            </td>
+            <td>
+                <a href="{{route('user.delete',$user->id)}}">zmazať</a>
             </td>
         </tr>
     @endforeach
 </table>
+<div>
+    <a href="{{route('user.add',$user->id)}}">Pridaj užívateľa</a>
+</div>

@@ -11,8 +11,9 @@
 |
 */
 
-Route::get("/get-user-form", "UserController@getAddUserForm");
+Route::get("/get-user-form", "UserController@getAddUserForm")->name('user.add');
 Route::post('/insert', ['as' => 'insert', 'uses' => 'UserController@insertAction']);
 Route::get("/showAll", "UserController@showAllAction");
-Route::get("/showAction/{id}", "UserController@showAction")->name('edit.user');
+Route::get("/showAction/{id}", "UserController@showAction")->name('user.edit');
 Route::post("/update/{id}", "UserController@updateAction")->name('user.update');
+Route::get("/delete/{id}", "UserController@deleteAction")->name('user.delete');
