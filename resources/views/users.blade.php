@@ -24,3 +24,6 @@
 <div>
     <a href="{{route('user.add',$user->id)}}">Pridaj užívateľa</a>
 </div>
+<div>
+    <a href="{{route('welcome')}}">Naspäť</a>
+</div>

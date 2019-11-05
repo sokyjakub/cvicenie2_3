@@ -17,3 +17,6 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
     <input type="submit" name="submit" value="Upraviť">
 </form>
+<div>
+    <a href="{{route('user.all')}}">Naspäť</a>
+</div>
